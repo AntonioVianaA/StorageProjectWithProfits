@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace Storage.Model
 {
     [Table("Usuario")]
-    class Usuario
+    public class Usuario
     {
 
         [Key]

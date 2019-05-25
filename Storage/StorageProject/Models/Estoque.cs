@@ -7,16 +7,18 @@ using System.Web;
 
 namespace StorageProject.Models
 {
-    [Table("Enderecos")]
-    public class Endereco
+    [Table("Estoque")]
+    public class Estoque
     {
+
         [Key]
-        public int EnderecoId { get; set; }
-        public string Rua { get; set; }
+        public int EstoqueId { get; set; }
         [Required(ErrorMessage = "Campo Obrigatório!")]
-        public string Cep { get; set; }
-        public string Pais { get; set; }
-        public int Numero { get; set; }
+        [Range(1,1000, ErrorMessage ="Qunatidade mínima de 1 e máxima 1000")]
+        public int QuantEstoque { get; set; }
+        public bool Situacao { get; set; }
+
+
 
     }
 }

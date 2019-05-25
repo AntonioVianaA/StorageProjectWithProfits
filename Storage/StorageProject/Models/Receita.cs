@@ -7,24 +7,24 @@ using System.Web;
 
 namespace StorageProject.Models
 {
-    [Table("Ingredientes")]
-    public class Ingrediente
+    [Table("Receitas")]
+    class Receita
     {
-
+        public Receita()
+        {
+            CriadoEm = DateTime.Now;
+        }
 
         [Key]
-        public int IngredienteId { get; set; }
+        public int ReceitaId { get; set; }
+        [Required(ErrorMessage = "Campo Obrigatório!")]
+        public string Preparo { get; set; }
         [Required(ErrorMessage = "Campo Obrigatório!")]
         public string Nome { get; set; }
-
         [Required(ErrorMessage = "Campo Obrigatório!")]
-        public string Descricao { get; set; }
-
+        public int Rendimento { get; set; }
+        public DateTime CriadoEm { get; set; }
         [Required(ErrorMessage = "Campo Obrigatório!")]
-        public DateTime Validade { get; set; }
-
-        [Required(ErrorMessage = "Campo Obrigatório!")]
-        public double Preco { get; set; }
-
+        public DateTime TempoPreparo { get; set; }
     }
 }
