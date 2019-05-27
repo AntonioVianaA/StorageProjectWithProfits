@@ -7,11 +7,11 @@ using System.Web;
 
 namespace StorageProject.Models
 {
-    [Table("Enderecos")]
+    [Table("Endereco")]
     public class Endereco
     {
         [Key]
-        public int EnderecoId { get; set; }
+        public int EnderecoID { get; set; }
         public string Rua { get; set; }
         [Required(ErrorMessage = "Campo Obrigatório!")]
         public string Cep { get; set; }

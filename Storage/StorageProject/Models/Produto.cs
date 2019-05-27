@@ -7,17 +7,17 @@ using System.Web;
 
 namespace StorageProject.Models
 {
-    [Table("Produtos")]
+    [Table("Produto")]
     public class Produto
     {
 
         [Key]
-        public int ProdutoId { get; set; }
+        public int ProdutoID { get; set; }
         public bool Status { get; set; }
         public double Preco { get; set; }
-        public DateTime TempoLevado { get; set; }
-        //public double QuantidadeReceita { get; set; }
+        public DateTime TempoProducao { get; set; }
+        public double QuantidadeReceita { get; set; }
         public int Porcoes { get; set; }
-        //public DateTime Adicionado { get; set; }
+        public DateTime ProduzidoEm { get; set; }
     }
 }

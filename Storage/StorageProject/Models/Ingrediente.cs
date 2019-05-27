@@ -7,13 +7,13 @@ using System.Web;
 
 namespace StorageProject.Models
 {
-    [Table("Ingredientes")]
+    [Table("Ingrediente")]
     public class Ingrediente
     {
 
 
         [Key]
-        public int IngredienteId { get; set; }
+        public int IngredienteID { get; set; }
         [Required(ErrorMessage = "Campo Obrigatório!")]
         public string Nome { get; set; }
 

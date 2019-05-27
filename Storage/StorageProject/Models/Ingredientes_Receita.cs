@@ -7,12 +7,12 @@ using System.Web;
 
 namespace StorageProject.Models
 {
-    [Table("Ingredientes_Receitas")]
+    [Table("Ingredientes_Receita")]
     public class Ingredientes_Receita
     {
 
         [Key]
-        public int Ingredientes_ReceitaId { get; set; }
+        public int Ingredientes_ReceitaID { get; set; }
         public double Quantidade { get; set; }
     }
 }

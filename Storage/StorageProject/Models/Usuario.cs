@@ -1,4 +1,5 @@
-﻿using System;
+﻿using StorageProject.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -14,9 +15,10 @@ namespace Storage.Model
 
         [Key]
         public int UsuarioID { get; set; }
-        //public ProdutoFinal Produto { get; set; }
-        //public Historico Historico { get; set; }
-        //public Endereco Endereco { get; set; }
+
+        public Produto Produto { get; set; }
+        public Historico Historico { get; set; }
+        public Endereco Endereco { get; set; }
 
         [Required(ErrorMessage = "Campo Obrigatório")]
         public string Nome { get; set; }
