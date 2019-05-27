@@ -7,13 +7,12 @@ using System.Web;
 
 namespace StorageProject.Models
 {
-    [Table("Historico")]
+    //[Table("Historicos")]
     public class Historico
     {
 
-        [Key]
-        public int HistoricoID { get; set; }
-        public Produto Produto { get; set; }
+        //[Key]
+        //public int HistoricoId { get; set; }
         public double ValorTotal { get; set; }
         public double ValorGasto { get; set; }
         public double Lucro { get; set; }

@@ -12,8 +12,7 @@ namespace StorageProject.Models
     {
 
         [Key]
-        public int EstoqueID { get; set; }
-        public Ingrediente ingrediente { get; set; }
+        public int EstoqueId { get; set; }
         [Required(ErrorMessage = "Campo Obrigatório!")]
         [Range(1,1000, ErrorMessage ="Qunatidade mínima de 1 e máxima 1000")]
         public int QuantEstoque { get; set; }
