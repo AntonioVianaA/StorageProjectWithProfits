@@ -75,3 +75,6 @@ C:\Users\Masiero\Source\Repos\StorageProjectWithProfits\Storage\StorageProject\b
 C:\Users\Masiero\Source\Repos\StorageProjectWithProfits\Storage\StorageProject\bin\pt-br\System.Web.WebPages.resources.dll
 C:\Users\Masiero\Source\Repos\StorageProjectWithProfits\Storage\StorageProject\bin\pt-br\System.Web.WebPages.Deployment.resources.dll
 C:\Users\Masiero\Source\Repos\StorageProjectWithProfits\Storage\StorageProject\bin\pt-br\System.Web.WebPages.Razor.resources.dll
+C:\Users\Aluno\Source\Repos\StorageProjectWithProfits\Storage\StorageProject\obj\Debug\StorageProject.csprojResolveAssemblyReference.cache
+C:\Users\Aluno\Source\Repos\StorageProjectWithProfits\Storage\StorageProject\obj\Debug\StorageProject.dll
+C:\Users\Aluno\Source\Repos\StorageProjectWithProfits\Storage\StorageProject\obj\Debug\StorageProject.pdb
