@@ -17,8 +17,7 @@
     <!-- CSS Files -->
     <link href="~/Content/assets/css/bootstrap.min.css" rel="stylesheet" />
     <link href="~/Content/assets/css/paper-dashboard.css?v=2.0.0" rel="stylesheet" />
-    <!-- CSS Just for demo purpose, don't include it in your project -->
-    <link href="~/Content/assets/demo/demo.css" rel="stylesheet" />
+    <script src="~/Content/assets/js/core/jquery.min.js"></script>
 </head>
 
 <body class="">
@@ -39,32 +38,32 @@
             </div>
             <div class="sidebar-wrapper">
                 <ul class="nav">
-                    <li class="active ">
-                        <a href="./dashboard.html">
+                    <li class="active " id="ItemHome">
+                        <a href="@Url.Action("Index", "Home")">
                             <i class="nc-icon nc-bank"></i>
                             <p>Dashboard</p>
                         </a>
                     </li>
-                    <li>
-                        <a href="./user.html">
+                    <li class="" id="ItemUsuario">
+                        <a href="@Url.Action("Index", "Usuario")">
                             <i class="nc-icon nc-single-02"></i>
                             <p>User Profile</p>
                         </a>
                     </li>
-                    <li>
-                        <a href="./tables.html">
+                    <li class="" id="ItemEstoque">
+                        <a href="@Url.Action("Index", "Estoque")">
                             <i class="nc-icon nc-box-2"></i>
                             <p>Table Storage</p>
                         </a>
                     </li>
-                    <li>
-                        <a href="./typography.html">
+                    <li class="" id="ItemReceita">
+                        <a href="@Url.Action("Index", "Receita")">
                             <i class="nc-icon nc-book-bookmark"></i>
                             <p>Recipe</p>
                         </a>
                     </li>
-                    <li>
-                        <a href="./typography.html">
+                    <li class="" id="ItemHistorico">
+                        <a href="@Url.Action("Index", "Historico")">
                             <i class="nc-icon nc-single-copy-04"></i>
                             <p>Historic</p>
                         </a>
