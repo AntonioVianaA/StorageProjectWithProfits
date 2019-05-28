@@ -179,3 +179,5 @@ C:\Users\Aluno\Desktop\Projecto\StorageProjectWithProfits\Storage\StorageProject
 C:\Users\Aluno\Desktop\Projecto\StorageProjectWithProfits\Storage\StorageProject\obj\Debug\StorageProject.csproj.GenerateResource.Cache
 C:\Users\Aluno\Desktop\Projecto\StorageProjectWithProfits\Storage\StorageProject\obj\Debug\StorageProject.dll
 C:\Users\Aluno\Desktop\Projecto\StorageProjectWithProfits\Storage\StorageProject\obj\Debug\StorageProject.pdb
+C:\Users\Masiero\Source\Repos\StorageProjectWithProfits\Storage\StorageProject\obj\Debug\StorageProject.Migrations.Primeira.resources
+C:\Users\Masiero\Source\Repos\StorageProjectWithProfits\Storage\StorageProject\obj\Debug\StorageProject.csproj.GenerateResource.cache
