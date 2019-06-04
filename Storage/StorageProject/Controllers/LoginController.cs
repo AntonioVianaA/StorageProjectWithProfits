@@ -13,6 +13,7 @@ namespace StorageProject.Controllers
         {
             return View();
         }
+        //Entra na Pagina Home ao Clicar em Logar
         public ActionResult Logado() {
             return RedirectToAction("Index", "Home");
         }
