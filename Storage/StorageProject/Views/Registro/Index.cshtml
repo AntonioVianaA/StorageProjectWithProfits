@@ -1,4 +1,5 @@
-﻿@{
+﻿@* Usar BEGIN FORM HtmlHelper *@
+@{
     Layout = "~/Views/Shared/_LayoutLoginRegister.cshtml";
     ViewBag.Title = "Registrar";
 }
@@ -9,27 +10,33 @@
             <h2 class="form-title">Sign up</h2>
             <form method="POST" class="register-form" id="register-form">
                 <div class="form-group">
+                    @* Label e TextBoxFor em baixo  *@
                     @Html.Label(" ", new { @class = "zmdi zmdi-account material-icons-name" })
                     <input type="text" name="name" id="name" placeholder="Nome" />
                 </div>
                 <div class="form-group">
+                    @* Label e TextBoxFor em baixo  *@
                     @Html.Label(" ", new { @class = "zmdi zmdi-account material-icons-name" })
                     <input type="text" name="name" id="name" placeholder="Sobrenome" />
                 </div>
                 <div class="form-group">
+                    @* Label e TextBoxFor em baixo  *@
                     @Html.Label(" ", new { @class = "zmdi zmdi-account-circle material-icons-name" })
                     <input type="text" name="name" id="name" placeholder="Nome de Usuario" />
                 </div>
                 <div class="form-group">
+                    @* Label e TextBoxFor em baixo  *@
                     @Html.Label(" ", new { @class = "zmdi zmdi-email" })
                     <input type="email" name="email" id="email" placeholder="Email" />
                 </div>
 
                 <div class="form-group">
+                    @* Label e TextBoxFor em baixo  *@
                     @Html.Label(" ", new { @class = "zmdi zmdi-lock" })
                     <input type="password" name="pass" id="pass" placeholder="Senha" />
                 </div>
                 <div class="form-group">
+                    @* Label e TextBoxFor em baixo  *@
                     @Html.Label(" ", new { @class = "zmdi zmdi-lock-outline" })
                     <input type="password" name="re_pass" id="re_pass" placeholder="Repita sua Senha" />
                 </div>
