@@ -13,6 +13,7 @@ namespace StorageProject.Models
 
         [Key]
         public int Ingredientes_ReceitaID { get; set; }
+        public Ingrediente Ingrediente { get; set; }
         public double Quantidade { get; set; }
     }
 }
