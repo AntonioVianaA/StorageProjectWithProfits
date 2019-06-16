@@ -15,5 +15,14 @@ namespace StorageProject.DAL
         {
             return ctx.Estoque.Include("Ingrediente").ToList();
         }
+        public static Estoque BuscarIngredientePorId(int? id)
+        {
+            return ctx.Estoque.Find(id);
+        }
+        public static void RemoverProduto(Estoque e)
+        {
+            ctx.Estoque.Remove(e);
+            ctx.SaveChanges();
+        }
     }
 }

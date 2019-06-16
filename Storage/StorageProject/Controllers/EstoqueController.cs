@@ -1,4 +1,5 @@
-﻿using StorageProject.DAL;
+﻿using PagedList;
+using StorageProject.DAL;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,9 +11,11 @@ namespace StorageProject.Controllers
     public class EstoqueController : Controller
     {
         // GET: Estoque
-        public ActionResult Index()
+        public ActionResult Index(int? pagina)
         {
-            return View(EstoqueDAO.RetornaEstoque());
+            int paginaTamanho = 8;
+            int paginaNumero = (pagina ?? 1);
+            return View(EstoqueDAO.RetornaEstoque().ToPagedList(paginaNumero, paginaTamanho));
         }
     }
 }
