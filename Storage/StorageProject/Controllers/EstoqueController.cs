@@ -1,4 +1,5 @@
-﻿using System;
+﻿using StorageProject.DAL;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,7 +12,7 @@ namespace StorageProject.Controllers
         // GET: Estoque
         public ActionResult Index()
         {
-            return View();
+            return View(EstoqueDAO.RetornaEstoque());
         }
     }
 }

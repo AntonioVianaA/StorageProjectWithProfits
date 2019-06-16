@@ -179,8 +179,6 @@ C:\Users\Aluno\Desktop\Projecto\StorageProjectWithProfits\Storage\StorageProject
 C:\Users\Aluno\Desktop\Projecto\StorageProjectWithProfits\Storage\StorageProject\obj\Debug\StorageProject.csproj.GenerateResource.Cache
 C:\Users\Aluno\Desktop\Projecto\StorageProjectWithProfits\Storage\StorageProject\obj\Debug\StorageProject.dll
 C:\Users\Aluno\Desktop\Projecto\StorageProjectWithProfits\Storage\StorageProject\obj\Debug\StorageProject.pdb
-C:\Users\Masiero\Source\Repos\StorageProjectWithProfits\Storage\StorageProject\obj\Debug\StorageProject.Migrations.Primeira.resources
-C:\Users\Masiero\Source\Repos\StorageProjectWithProfits\Storage\StorageProject\obj\Debug\StorageProject.csproj.GenerateResource.cache
 C:\Users\Via Antonio\Desktop\GitHub\FinalStand\AntonioVianaA\StorageProjectWithProfits\Storage\StorageProject\bin\ApplicationInsights.config
 C:\Users\Via Antonio\Desktop\GitHub\FinalStand\AntonioVianaA\StorageProjectWithProfits\Storage\StorageProject\bin\StorageProject.dll.config
 C:\Users\Via Antonio\Desktop\GitHub\FinalStand\AntonioVianaA\StorageProjectWithProfits\Storage\StorageProject\bin\StorageProject.dll
@@ -260,3 +258,9 @@ C:\Users\Via Antonio\Desktop\GitHub\FinalStand\AntonioVianaA\StorageProjectWithP
 C:\Users\Via Antonio\Desktop\GitHub\FinalStand\AntonioVianaA\StorageProjectWithProfits\Storage\StorageProject\obj\Debug\StorageProject.csproj.CopyComplete
 C:\Users\Via Antonio\Desktop\GitHub\FinalStand\AntonioVianaA\StorageProjectWithProfits\Storage\StorageProject\obj\Debug\StorageProject.dll
 C:\Users\Via Antonio\Desktop\GitHub\FinalStand\AntonioVianaA\StorageProjectWithProfits\Storage\StorageProject\obj\Debug\StorageProject.pdb
+C:\Users\Masiero\Source\Repos\StorageProjectWithProfits\Storage\StorageProject\obj\Debug\StorageProject.Migrations.Primeira.resources
+C:\Users\Masiero\Source\Repos\StorageProjectWithProfits\Storage\StorageProject\obj\Debug\StorageProject.csproj.GenerateResource.cache
+C:\Users\Masiero\Source\Repos\StorageProjectWithProfits\Storage\StorageProject\bin\PagedList.dll
+C:\Users\Masiero\Source\Repos\StorageProjectWithProfits\Storage\StorageProject\bin\PagedList.Mvc.dll
+C:\Users\Masiero\Source\Repos\StorageProjectWithProfits\Storage\StorageProject\bin\PagedList.xml
+C:\Users\Masiero\Source\Repos\StorageProjectWithProfits\Storage\StorageProject\bin\PagedList.Mvc.xml
