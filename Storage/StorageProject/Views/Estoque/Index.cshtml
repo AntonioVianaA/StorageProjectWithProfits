@@ -84,18 +84,19 @@
                     <tbody id="myTable">
                         @foreach (StorageProject.Models.Estoque item in Model)
                         {
-                            <tr>
-                                @*/Pedir para o professor Explicar/*@
-                                <td>@item.Ingrediente.Nome</td>
-                                <td>@item.Ingrediente.Preco</td>
-                                <td>@item.QuantEstoque</td>
-                                <td>@item.Ingrediente.Validade.ToShortDateString()</td>
-                                <td>@item.Ingrediente.Descricao</td>
+                        <tr>
+                            @*/Pedir para o professor Explicar/*@
+                            <td>@item.Ingrediente.Nome</td>
+                            <td>@item.Ingrediente.Preco</td>
+                            <td>@item.QuantEstoque</td>
+                            <td>@item.Ingrediente.Validade.ToShortDateString()</td>
+                            <td>@item.Ingrediente.Descricao</td>
+                            @*/remover/*@
+                            <td>@Html.ActionLink(" ", "Remover", "Produto", null, new { @class = "fas fa-times" })</td>
+                            @*/alterar/*@
+                            <td>@Html.ActionLink(" ", "Remover", "Produto", null, new { @class = "fas fa-edit" })</td>
 
-                                <td>@Html.ActionLink(" ", "Remover", "Produto", null, new { @class = "fas fa-times" })</td>
-                                <td>@Html.ActionLink(" ", "Remover", "Produto", null, new { @class = "fas fa-edit" })</td>
-
-                            </tr>
+                        </tr>
 
                         }
                     </tbody>
