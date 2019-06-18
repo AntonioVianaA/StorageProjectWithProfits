@@ -18,6 +18,11 @@ namespace StorageProject.Controllers
             return View();
         }
 
+        public ActionResult Cadastrar()
+        {
+            return View();
+        }
+
         [HttpPost]
         public ActionResult Cadastrar(Usuario usuario)
         {

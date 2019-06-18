@@ -16,7 +16,7 @@ namespace StorageProject
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Registro", action = "Index", id = UrlParameter.Optional }
+                defaults: new { controller = "Usuario", action = "Cadastrar", id = UrlParameter.Optional }
             );
         }
     }
