@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Storage.Model
+namespace StorageProject.Models
 {
     [Table("Usuario")]
     public class Usuario

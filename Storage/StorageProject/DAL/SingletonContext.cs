@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace EcommerceA.DAL
+namespace StorageProject.DAL
 {
     public class SingletonContext
     {

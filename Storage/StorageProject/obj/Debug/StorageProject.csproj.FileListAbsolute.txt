@@ -264,3 +264,7 @@ C:\Users\Masiero\Source\Repos\StorageProjectWithProfits\Storage\StorageProject\b
 C:\Users\Masiero\Source\Repos\StorageProjectWithProfits\Storage\StorageProject\bin\PagedList.Mvc.dll
 C:\Users\Masiero\Source\Repos\StorageProjectWithProfits\Storage\StorageProject\bin\PagedList.xml
 C:\Users\Masiero\Source\Repos\StorageProjectWithProfits\Storage\StorageProject\bin\PagedList.Mvc.xml
+C:\Users\Via Antonio\Desktop\GitHub\FinalStand\AntonioVianaA\StorageProjectWithProfits\Storage\StorageProject\bin\PagedList.dll
+C:\Users\Via Antonio\Desktop\GitHub\FinalStand\AntonioVianaA\StorageProjectWithProfits\Storage\StorageProject\bin\PagedList.Mvc.dll
+C:\Users\Via Antonio\Desktop\GitHub\FinalStand\AntonioVianaA\StorageProjectWithProfits\Storage\StorageProject\bin\PagedList.xml
+C:\Users\Via Antonio\Desktop\GitHub\FinalStand\AntonioVianaA\StorageProjectWithProfits\Storage\StorageProject\bin\PagedList.Mvc.xml

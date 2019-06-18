@@ -1,5 +1,5 @@
 ﻿
-using Storage.Model;
+using StorageProject.Models;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
