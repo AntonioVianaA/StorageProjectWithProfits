@@ -268,3 +268,4 @@ C:\Users\Via Antonio\Desktop\GitHub\FinalStand\AntonioVianaA\StorageProjectWithP
 C:\Users\Via Antonio\Desktop\GitHub\FinalStand\AntonioVianaA\StorageProjectWithProfits\Storage\StorageProject\bin\PagedList.Mvc.dll
 C:\Users\Via Antonio\Desktop\GitHub\FinalStand\AntonioVianaA\StorageProjectWithProfits\Storage\StorageProject\bin\PagedList.xml
 C:\Users\Via Antonio\Desktop\GitHub\FinalStand\AntonioVianaA\StorageProjectWithProfits\Storage\StorageProject\bin\PagedList.Mvc.xml
+C:\Users\Via Antonio\Desktop\GitHub\FinalStand\AntonioVianaA\StorageProjectWithProfits\Storage\StorageProject\obj\Debug\StorageProject.Migrations.Alteracao.resources

@@ -11,18 +11,21 @@ namespace StorageProject.DAL
     {
         private static Context ctx = SingletonContext.GetInstance();
 
-        public static void CadastrarIngrediente(Estoque ingrediente)
+        public static void CadastrarIngrediente(Ingrediente ingrediente)
         {
-            //parada da Sessao
-            Estoque e = ctx.Estoque.Include("Ingrediente").FirstOrDefault(x => x.Ingrediente.IngredienteID == ingrediente.Ingrediente.IngredienteID /*parada da sessao*/);
+            Estoque estoque = new Estoque();
+            ////parada da Sessao
+            Estoque e = BuscarIngredientePorId(ingrediente.IngredienteID)/*parada da sessao*/;
+
 
             if (e == null)
             {
-                ctx.Estoque.Add(ingrediente);
+                estoque.Ingrediente = ingrediente;
+                ctx.Estoque.Add(estoque);
             }
             else
             {
-                e.QuantEstoque += ingrediente.QuantEstoque;
+                e.Ingrediente.QuantEstoque += ingrediente.QuantEstoque;
                 ctx.Entry(e).State = System.Data.Entity.EntityState.Modified;
             }
             ctx.SaveChanges();

@@ -54,6 +54,7 @@ namespace StorageProject.Controllers
             i.Descricao = ingrediente.Descricao;
             i.Preco = ingrediente.Preco;
             i.Validade = ingrediente.Validade;
+            i.QuantEstoque = ingrediente.QuantEstoque;
 
             string variavel = "123123123";
             byte[] bytes = Encoding.Default.GetBytes(variavel);

@@ -10,6 +10,10 @@ namespace StorageProject.Models
     [Table("Ingrediente")]
     public class Ingrediente
     {
+        //public Ingrediente()
+        //{
+            
+        //}
 
 
         [Key]
@@ -25,6 +29,10 @@ namespace StorageProject.Models
 
         [Required(ErrorMessage = "Campo Obrigatório!")]
         public double Preco { get; set; }
+        [Range(1, 1000, ErrorMessage = "Qunatidade mínima de 1 e máxima 1000")]
+        [Required(ErrorMessage = "Campo Obrigatório!")]
+        public int QuantEstoque { get; set; }
+        public bool Situacao { get; set; }
 
     }
 }

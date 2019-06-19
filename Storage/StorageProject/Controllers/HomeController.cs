@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace StorageProject.Controllers
 {
-    [Authorize]
+    //[Authorize]
     public class HomeController : Controller
     {
        

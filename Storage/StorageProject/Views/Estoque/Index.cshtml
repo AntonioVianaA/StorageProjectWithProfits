@@ -45,13 +45,13 @@
 
                         <div class="pure-control-group">
                             @Html.Label("Quantidade")
-                            @Html.TextBoxFor(model => model.QuantEstoque, new { @type = "number", @step = "any", @class = "col-8", @placeholder = "Quantidade Ingrediente" })
+                            @Html.TextBoxFor(model => model.Ingrediente.QuantEstoque, new { @type = "number", @step = "any", @class = "col-8", @placeholder = "Quantidade Ingrediente" })
 
                         </div>
 
                         <div class="pure-control-group">
                             @Html.Label("Validade")
-                            @Html.TextBoxFor(model => model.QuantEstoque, new { @type = "date", @class = "col-8" })
+                            @Html.TextBoxFor(model => model.Ingrediente.Validade, new { @type = "date", @class = "col-8" })
 
 
                         </div>
@@ -98,7 +98,7 @@
                                     @*/Pedir para o professor Explicar/*@
                                     <td>@item.Ingrediente.Nome</td>
                                     <td>@item.Ingrediente.Preco</td>
-                                    <td>@item.QuantEstoque</td>
+                                    <td>@item.Ingrediente.QuantEstoque</td>
                                     <td>@item.Ingrediente.Validade.ToShortDateString()</td>
                                     <td>@item.Ingrediente.Descricao</td>
                                     @*/Esta dando erro/*@

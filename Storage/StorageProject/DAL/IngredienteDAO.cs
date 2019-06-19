@@ -20,7 +20,9 @@ namespace StorageProject.DAL
             if (BuscarIngredientePorNome(i) == null)
             {
                 ctx.Ingrediente.Add(i);
+                //Exception de Datetime2
                 ctx.SaveChanges();
+                EstoqueDAO.CadastrarIngrediente(i);
                 return true;
             }
             return false;
