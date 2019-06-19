@@ -13,11 +13,11 @@ namespace StorageProject.Controllers
     public class EstoqueController : Controller
     {
         // GET: Estoque
-        public ActionResult Index(int? pagina)
+        public ActionResult Index()
         {
-            int paginaTamanho = 8;
-            int paginaNumero = (pagina ?? 1);
-            return View(EstoqueDAO.RetornaEstoque().ToPagedList(paginaNumero, paginaTamanho));
+           
+            ViewBag.Estoque = EstoqueDAO.RetornaEstoque();
+            return View();
         }
 
         [HttpPost]
