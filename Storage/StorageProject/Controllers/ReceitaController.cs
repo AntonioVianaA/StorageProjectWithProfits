@@ -6,6 +6,7 @@ using System.Web.Mvc;
 
 namespace StorageProject.Controllers
 {
+    [Authorize]
     public class ReceitaController : Controller
     {
         // GET: Receita

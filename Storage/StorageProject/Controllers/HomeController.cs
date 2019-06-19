@@ -6,12 +6,19 @@ using System.Web.Mvc;
 
 namespace StorageProject.Controllers
 {
+    [Authorize]
     public class HomeController : Controller
     {
+       
         // GET: Home
         public ActionResult Index()
         {
-            return View();
+            if (Request.IsAuthenticated)
+            {
+                ViewBag.Usuario = User.Identity.Name;
+                return View();
+            }
+            return RedirectToAction("Login", "Usuario");
         }
     }
 }
