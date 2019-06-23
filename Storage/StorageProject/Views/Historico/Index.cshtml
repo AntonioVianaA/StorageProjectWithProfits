@@ -1,5 +1,8 @@
-﻿
+﻿@using StorageProject.Models
 @{
+    Usuario u = ViewBag.Usuario;
+    ViewBag.NomeUsuario = u.Nome;
+    ViewBag.SobrenomeUsuario = u.Sobrenome;
     ViewBag.Title = "Histórico";
 }
 

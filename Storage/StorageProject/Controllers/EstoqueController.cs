@@ -16,6 +16,8 @@ namespace StorageProject.Controllers
         public ActionResult Index()
         {
 
+            string a = User.Identity.Name;
+            ViewBag.Usuario = UsuarioDAO.BuscarUserLoginString(a);
             ViewBag.Ingrediente = IngredienteDAO.RetornaIngrediente();
             return View();
         }

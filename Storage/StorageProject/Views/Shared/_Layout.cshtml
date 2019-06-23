@@ -96,7 +96,7 @@
                             </button>
                         </div>
                         @* Mudar os HREFs para HTML Helper *@
-                        <a class="navbar-brand" href=@Url.Action("Logout", "Usuario") style="padding-left: 50%; ">Welcome to Cake Control</a>
+                    <a class="navbar-brand" href=@Url.Action("Logout", "Usuario") style="padding-left: 50%; ">Welcome @ViewBag.NomeUsuario @ViewBag.SobrenomeUsuario to Cake Control</a>
                     </div>
 
                 </div>

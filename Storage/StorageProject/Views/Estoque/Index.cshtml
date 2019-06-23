@@ -3,6 +3,9 @@
 @{
     List<Ingrediente> ingrediente = ViewBag.Ingrediente;
     ViewBag.Title = "Estoque";
+    Usuario u = ViewBag.Usuario;
+    ViewBag.NomeUsuario = u.Nome;
+    ViewBag.SobrenomeUsuario = u.Sobrenome;
 }
 
 <h2>Index 3</h2>
