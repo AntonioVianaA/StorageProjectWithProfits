@@ -1,7 +1,7 @@
 ﻿@using StorageProject.Models
 @model Estoque
 @{
-    List<Estoque> estoque = ViewBag.Estoque;
+    List<Ingrediente> ingrediente = ViewBag.Ingrediente;
     ViewBag.Title = "Estoque";
 }
 
@@ -92,19 +92,19 @@
                             </tr>
                         </thead>
                         <tbody id="myTable">
-                            @foreach (Estoque item in estoque)
+                            @foreach (Ingrediente item in ingrediente)
                             {
                                 <tr>
                                     @*/Pedir para o professor Explicar/*@
-                                    <td>@item.Ingrediente.Nome</td>
-                                    <td>@item.Ingrediente.Preco</td>
-                                    <td>@item.Ingrediente.QuantEstoque</td>
-                                    <td>@item.Ingrediente.Validade.ToShortDateString()</td>
-                                    <td>@item.Ingrediente.Descricao</td>
+                                    <td>@item.Nome</td>
+                                    <td>@item.Preco</td>
+                                    <td>@item.QuantEstoque</td>
+                                    <td>@item.Validade.ToShortDateString()</td>
+                                    <td>@item.Descricao</td>
                                     @*/Esta dando erro/*@
-                                    <td>@Html.ActionLink(" ", "Remover", "Estoque", new { id = item.Ingrediente.IngredienteID }, new { @class = "fas fa-times" })</td>
+                                    <td>@Html.ActionLink(" ", "Remover", "Estoque", new { id = item.IngredienteID }, new { @class = "fas fa-times" })</td>
                                     @*/Esta dando erro/*@
-                                    <td>@Html.ActionLink(" ", "Alterar", "Estoque", new { id = item.Ingrediente.IngredienteID }, new { @class = "fas fa-edit" })</td>
+                                    <td>@Html.ActionLink(" ", "Alterar", "Estoque", new { id = item.IngredienteID }, new { @class = "fas fa-edit" })</td>
 
                                 </tr>
 

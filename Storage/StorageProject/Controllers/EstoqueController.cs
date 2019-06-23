@@ -15,8 +15,8 @@ namespace StorageProject.Controllers
         // GET: Estoque
         public ActionResult Index()
         {
-           
-            ViewBag.Estoque = EstoqueDAO.RetornaEstoque();
+
+            ViewBag.Ingrediente = IngredienteDAO.RetornaIngrediente();
             return View();
         }
 

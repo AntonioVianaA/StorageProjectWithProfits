@@ -228,13 +228,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201906160525599_Primeira.cs" />
-    <Compile Include="Migrations\201906160525599_Primeira.Designer.cs">
-      <DependentUpon>201906160525599_Primeira.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201906192225269_Alteracao.cs" />
-    <Compile Include="Migrations\201906192225269_Alteracao.Designer.cs">
-      <DependentUpon>201906192225269_Alteracao.cs</DependentUpon>
+    <Compile Include="Migrations\201906231745084_Primeira.cs" />
+    <Compile Include="Migrations\201906231745084_Primeira.Designer.cs">
+      <DependentUpon>201906231745084_Primeira.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Context.cs" />
@@ -298,11 +294,8 @@
     <TypeScriptCompile Include="Scripts\index.d.ts" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201906160525599_Primeira.resx">
-      <DependentUpon>201906160525599_Primeira.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201906192225269_Alteracao.resx">
-      <DependentUpon>201906192225269_Alteracao.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201906231745084_Primeira.resx">
+      <DependentUpon>201906231745084_Primeira.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

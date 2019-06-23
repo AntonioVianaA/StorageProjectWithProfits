@@ -44,5 +44,9 @@ namespace StorageProject.DAL
             ctx.Entry(i).State = System.Data.Entity.EntityState.Modified;
             ctx.SaveChanges();
         }
+        public static List<Ingrediente> RetornaIngrediente()
+        {
+            return ctx.Ingrediente.ToList();
+        }
     }
 }

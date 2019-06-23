@@ -23,12 +23,21 @@ namespace StorageProject.DAL
 
         public static Usuario BuscarUserLogin(Usuario u)
         {
-            return ctx.Usuario.FirstOrDefault(x => x.Username.Equals(u.Username));
+            return ctx.Usuario.FirstOrDefault(x => x.Username.Equals(u));
         }
+        public static Usuario BuscarUserLoginString(string u)
+        {
+            return ctx.Usuario.FirstOrDefault(x => x.Username.Equals(u));
+        }
+
+
+
 
         public static Usuario BuscarUserLoginPassword(Usuario usuario)
         {
             return ctx.Usuario.FirstOrDefault(x => x.Username.Equals(usuario.Username) && x.Password.Equals(usuario.Password));
         }
+
+
     }
 }

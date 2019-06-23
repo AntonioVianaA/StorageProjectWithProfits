@@ -15,13 +15,25 @@ namespace StorageProject.Controllers
         public ActionResult Index()
         {
 
-            return View();
+            if (Request.IsAuthenticated)
+            {
+                string a = User.Identity.Name;
+                ViewBag.Usuario = UsuarioDAO.BuscarUserLoginString(a);
+                return View();
+            }
+            return RedirectToAction("Login", "Usuario");
         }
 
         public ActionResult Cadastrar()
         {
             return View();
         }
+        public ActionResult AlterarImagem()
+        {
+            return View();
+        }
+
+
 
         [HttpPost]
         public ActionResult Cadastrar(Usuario usuario)
@@ -48,8 +60,9 @@ namespace StorageProject.Controllers
             usuario = UsuarioDAO.BuscarUserLoginPassword(usuario);
             if (usuario != null)
             {
-
                 FormsAuthentication.SetAuthCookie(usuario.Username, false);
+                
+
                 return RedirectToAction("index", "Home");
             }
             ModelState.AddModelError("", "Login ou senha incorretos!");

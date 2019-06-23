@@ -1,6 +1,8 @@
-﻿
+﻿@using StorageProject.Models
+@model Usuario
 @{
     ViewBag.Title = "Usuario";
+    Usuario u = ViewBag.Usuario;
 }
 
 <h2>Index 2</h2>
@@ -9,3 +11,144 @@
 
     $('#ItemUsuario').addClass('active');
 </script>
+<link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous">
+<script src="https://kit.fontawesome.com/4e0e542aed.js"></script>
+
+<div class="card-body">
+    <div class="col-12">
+        <div class="card">
+
+            <div class="card-body">
+
+
+                <div class="row">
+                    <div class="col-12">
+                        <ul class="nav nav-tabs mb-4" id="myTab" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active" id="basicInfo-tab" data-toggle="tab" href="#basicInfo" role="tab" aria-controls="basicInfo" aria-selected="true">Perfil</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="connectedServices-tab" data-toggle="tab" href="#connectedServices" role="tab" aria-controls="connectedServices" aria-selected="false">Endereço</a>
+                            </li>
+                        </ul>
+                        <div class="tab-content ml-1" id="myTabContent">
+                            <div class="tab-pane fade show active" id="basicInfo" role="tabpanel" aria-labelledby="basicInfo-tab">
+                                <div class="image-container">
+                                    <img src="http://placehold.it/150x150" id="imgProfile" style="width: 150px; height: 150px" class="" />
+
+
+
+
+                                </div> 
+                                @using (Html.BeginForm("Index", "Usuario", FormMethod.Post, new { @class = "pure-form pure-form-aligned" }))
+
+                                {
+
+
+                                    <div class="row">
+                                        <div class="col-md-8 col-6">
+                                            @Html.TextBoxFor(m => m.Imagem, new { type = "file", @class = "btn btn-default btn-file" })
+
+                                            @Html.ActionLink("Alterar", "AlterarImagem", "Usuario", new { @class = "btn btn-default btn-file" })
+                                        </div>
+                                    </div>
+
+
+
+                                }
+
+                                <div class="row">
+                                    <div class="col-sm-3 col-md-2 col-5">
+
+                                        @Html.Label("Nome")
+                                    </div>
+                                    <div class="col-md-8 col-6">
+                                        @Html.DisplayName(u.Nome)
+                                        @Html.DisplayName(u.Sobrenome)
+                                    </div>
+                                </div>
+                                <hr />
+
+                                <div class="row">
+                                    <div class="col-sm-3 col-md-2 col-5">
+                                        @Html.Label("Usuario")
+                                    </div>
+                                    <div class="col-md-8 col-6">
+                                        @Html.DisplayName(u.Username)
+                                    </div>
+                                </div>
+                                <hr />
+
+
+                                <div class="row">
+                                    <div class="col-sm-3 col-md-2 col-5">
+                                        @Html.Label("Email")
+                                    </div>
+                                    <div class="col-md-8 col-6">
+                                        @Html.DisplayName(u.Email)
+                                    </div>
+                                </div>
+                                <hr />
+                                <div class="row">
+                                    <div class="col-sm-3 col-md-2 col-5">
+                                        @Html.Label("Cpf")
+                                    </div>
+                                    <div class="col-md-8 col-6">
+                                        @Html.DisplayName(u.Cpf)
+                                    </div>
+                                </div>
+                                <hr />
+                            </div>
+
+
+                            <div class="tab-pane fade" id="connectedServices" role="tabpanel" aria-labelledby="ConnectedServices-tab">
+                                <div class="tab-content ml-1" id="myTabContent">
+                                    <div class="tab-pane fade show active" id="basicInfo" role="tabpanel" aria-labelledby="basicInfo-tab">
+
+                                        @*Alterar caminho da view*@
+                                        @using (Html.BeginForm("Index", "Usuario", FormMethod.Post, new { @class = "pure-form pure-form-aligned" }))
+                                        {
+                                            <fieldset>
+
+                                                <div class="pure-control-group">
+                                                    @Html.Label("CEP")
+                                                    @Html.TextBoxFor(model => model.Endereco.Cep, new { @class = "col-8", @placeholder = "CEP" })
+                                                </div>
+                                                <div class="pure-control-group">
+                                                    @Html.Label("Estado")
+                                                    @Html.TextBoxFor(model => model.Endereco.Estado, new { @class = "col-8", @placeholder = "Estado" })
+                                                </div>
+                                                <div class="pure-control-group">
+                                                    @Html.Label("Cidade")
+                                                    @Html.TextBoxFor(model => model.Endereco.Cidade, new { @class = "col-8", @placeholder = "Cidade" })
+                                                </div>
+                                                <div class="pure-control-group">
+                                                    @Html.Label("Rua")
+                                                    @Html.TextBoxFor(model => model.Endereco.Rua, new { @class = "col-8", @placeholder = "Rua" })
+                                                </div>
+                                                <div class="pure-control-group">
+                                                    @Html.Label("Numero")
+                                                    @Html.TextBoxFor(model => model.Endereco.Numero, new { @class = "col-8", @placeholder = "Numero" })
+                                                </div>
+
+                                                <div class="pure-controls">
+                                                    <button type="submit" class="pure-button pure-button-primary">Cadastrar Endereço</button>
+                                                </div>
+
+                                            </fieldset>
+                                        }
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+            </div>
+        </div>
+        </div>
+</div>
