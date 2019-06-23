@@ -18,7 +18,7 @@ namespace StorageProject.Models
         public string Cidade { get; set; }
         public String Estado { get; set; }
         public string Pais { get; set; }
-        public int Numero { get; set; }
+        public string Numero { get; set; }
 
     }
 }

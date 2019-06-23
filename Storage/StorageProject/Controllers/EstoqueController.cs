@@ -21,7 +21,7 @@ namespace StorageProject.Controllers
         }
 
         [HttpPost]
-        public ActionResult Index(Ingrediente ingrediente)
+        public ActionResult Cadastrar(Ingrediente ingrediente)
         {
             if (ModelState.IsValid)
             {

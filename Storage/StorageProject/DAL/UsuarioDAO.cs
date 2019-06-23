@@ -27,10 +27,13 @@ namespace StorageProject.DAL
         }
         public static Usuario BuscarUserLoginString(string u)
         {
-            return ctx.Usuario.FirstOrDefault(x => x.Username.Equals(u));
+            return ctx.Usuario.Include("Endereco").FirstOrDefault(x => x.Username.Equals(u));
         }
 
-
+        public static Endereco BuscarEndereco(Usuario u)
+        {
+            return ctx.Endereco.FirstOrDefault(x => x.EnderecoID.Equals(u.Endereco.EnderecoID));
+        }
 
 
         public static Usuario BuscarUserLoginPassword(Usuario usuario)

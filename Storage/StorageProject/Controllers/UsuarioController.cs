@@ -19,6 +19,7 @@ namespace StorageProject.Controllers
             {
                 string a = User.Identity.Name;
                 ViewBag.Usuario = UsuarioDAO.BuscarUserLoginString(a);
+              
                 return View();
             }
             return RedirectToAction("Login", "Usuario");
