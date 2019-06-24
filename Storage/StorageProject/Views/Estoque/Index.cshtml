@@ -1,7 +1,7 @@
 ﻿@using StorageProject.Models
 @model Estoque
 @{
-    List<Ingrediente> ingrediente = ViewBag.Ingrediente;
+    List<Estoque> estoque = ViewBag.Estoque;
     ViewBag.Title = "Estoque";
     Usuario u = ViewBag.Usuario;
     ViewBag.NomeUsuario = u.Nome;
@@ -95,21 +95,20 @@
                             </tr>
                         </thead>
                         <tbody id="myTable">
-                            @foreach (Ingrediente item in ingrediente)
+                            @foreach (Estoque item in estoque)
                             {
-                                <tr>
-                                    @*/Pedir para o professor Explicar/*@
-                                    <td>@item.Nome</td>
-                                    <td>@item.Preco</td>
-                                    <td>@item.QuantEstoque</td>
-                                    <td>@item.Validade.ToShortDateString()</td>
-                                    <td>@item.Descricao</td>
-                                    @*/Esta dando erro/*@
-                                    <td>@Html.ActionLink(" ", "Remover", "Estoque", new { id = item.IngredienteID }, new { @class = "fas fa-times" })</td>
-                                    @*/Esta dando erro/*@
-                                    <td>@Html.ActionLink(" ", "Alterar", "Estoque", new { id = item.IngredienteID }, new { @class = "fas fa-edit" })</td>
+                            <tr>
+                                <td>@item.Ingrediente.Nome</td>
+                                <td>@item.Ingrediente.Preco</td>
+                                <td>@item.Ingrediente.QuantEstoque</td>
+                                <td>@item.Ingrediente.Validade.ToShortDateString()</td>
+                                <td>@item.Ingrediente.Descricao</td>
 
-                                </tr>
+
+                                <td>@Html.ActionLink(" ", "Remover", "Estoque", new { id = item.Ingrediente.IngredienteID }, new { @class = "fas fa-times" })</td>
+                                @*/Esta dando erro/*@
+                                <td>@Html.ActionLink(" ", "Alterar", "Estoque", new { id = item.Ingrediente.IngredienteID }, new { @class = "fas fa-edit" })</td>
+                            </tr>
 
                             }
                         </tbody>

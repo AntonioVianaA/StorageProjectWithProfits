@@ -18,7 +18,7 @@ namespace StorageProject.Controllers
 
             string a = User.Identity.Name;
             ViewBag.Usuario = UsuarioDAO.BuscarUserLoginString(a);
-            ViewBag.Ingrediente = IngredienteDAO.RetornaIngrediente();
+            ViewBag.Estoque = EstoqueDAO.RetornaEstoque();
             return View();
         }
 
@@ -39,19 +39,21 @@ namespace StorageProject.Controllers
 
         public ActionResult Remover(int? id)
         {
-            IngredienteDAO.RemoverIngrediente(IngredienteDAO.BuscarIngredientePorID(id));
+            EstoqueDAO.RemoverEstoque(EstoqueDAO.BuscarIngredientePorId(id));
             return RedirectToAction("Index", "Estoque");
         }
 
+
+
         public ActionResult Alterar(int? id)
         {
-            return View(IngredienteDAO.BuscarIngredientePorID(id));
+            return View(IngredienteDAO.BuscarIngredientePorId(id));
         }
 
         [HttpPost]
         public ActionResult Alterar(Ingrediente ingrediente)
         {
-            Ingrediente i = IngredienteDAO.BuscarIngredientePorID(ingrediente.IngredienteID);
+            Ingrediente i = IngredienteDAO.BuscarIngredientePorId(ingrediente.IngredienteID);
             i.Nome = ingrediente.Nome;
             i.Descricao = ingrediente.Descricao;
             i.Preco = ingrediente.Preco;

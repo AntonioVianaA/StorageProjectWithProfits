@@ -236,6 +236,10 @@
     <Compile Include="Migrations\201906231805097_Primeiraa.Designer.cs">
       <DependentUpon>201906231805097_Primeiraa.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201906241913336_aaa.cs" />
+    <Compile Include="Migrations\201906241913336_aaa.Designer.cs">
+      <DependentUpon>201906241913336_aaa.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Context.cs" />
     <Compile Include="Models\Endereco.cs" />
@@ -303,6 +307,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201906231805097_Primeiraa.resx">
       <DependentUpon>201906231805097_Primeiraa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906241913336_aaa.resx">
+      <DependentUpon>201906241913336_aaa.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -31,9 +31,20 @@ namespace StorageProject.DAL
             ctx.SaveChanges();
         }
 
-        public static Estoque BuscarIngredientePorId(int id)
+        public static Estoque BuscarIngredientePorId(int? id)
         {
-            return ctx.Estoque.Find(id);
+            return ctx.Estoque.FirstOrDefault(x => x.Ingrediente.IngredienteID == id);
+        }
+        public static void RemoverEstoque(Estoque e)
+        {
+
+            ctx.Estoque.Remove(e);
+            ctx.SaveChanges();
+        }
+
+        public static Estoque RetornaIngredienteTeste(Ingrediente e)
+        {
+            return ctx.Estoque.FirstOrDefault(x => x.Ingrediente.IngredienteID.Equals(e.IngredienteID));
         }
 
         //Provavelmente tera q corrigir

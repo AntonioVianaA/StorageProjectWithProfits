@@ -28,16 +28,12 @@ namespace StorageProject.DAL
             return false;
         }
 
-        public static Ingrediente BuscarIngredientePorID(int ? id)
+        public static Ingrediente BuscarIngredientePorId(int? id)
         {
             return ctx.Ingrediente.Find(id);
         }
 
-        public static void RemoverIngrediente(Ingrediente i)
-        {
-            ctx.Ingrediente.Remove(i);
-            ctx.SaveChanges();
-        }
+        
 
         public static void AlterarIngrediente(Ingrediente i)
         {

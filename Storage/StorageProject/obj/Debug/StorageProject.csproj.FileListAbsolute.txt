@@ -353,3 +353,4 @@ C:\Users\Masiero\Source\Repos\AntonioVianaA\StorageProjectWithProfits\Storage\St
 C:\Users\Masiero\Source\Repos\AntonioVianaA\StorageProjectWithProfits\Storage\StorageProject\obj\Debug\StorageProject.Migrations.Primeira.resources
 C:\Users\Masiero\Source\Repos\AntonioVianaA\StorageProjectWithProfits\Storage\StorageProject\obj\Debug\StorageProject.csproj.GenerateResource.cache
 C:\Users\Masiero\Source\Repos\AntonioVianaA\StorageProjectWithProfits\Storage\StorageProject\obj\Debug\StorageProject.Migrations.Primeiraa.resources
+C:\Users\Masiero\Source\Repos\AntonioVianaA\StorageProjectWithProfits\Storage\StorageProject\obj\Debug\StorageProject.Migrations.aaa.resources
