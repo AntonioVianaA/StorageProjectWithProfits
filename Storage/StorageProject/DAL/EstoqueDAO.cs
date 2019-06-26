@@ -14,20 +14,8 @@ namespace StorageProject.DAL
         public static void CadastrarIngrediente(Ingrediente ingrediente)
         {
             Estoque estoque = new Estoque();
-            ////parada da Sessao
-            Estoque e = BuscarIngredientePorId(ingrediente.IngredienteID)/*parada da sessao*/;
-
-
-            if (e == null)
-            {
-                estoque.Ingrediente = ingrediente;
-                ctx.Estoque.Add(estoque);
-            }
-            else
-            {
-                e.Ingrediente.QuantEstoque += ingrediente.QuantEstoque;
-                ctx.Entry(e).State = System.Data.Entity.EntityState.Modified;
-            }
+            estoque.Ingrediente = ingrediente;
+            ctx.Estoque.Add(estoque);
             ctx.SaveChanges();
         }
 
@@ -35,6 +23,12 @@ namespace StorageProject.DAL
         {
             return ctx.Estoque.FirstOrDefault(x => x.Ingrediente.IngredienteID == id);
         }
+
+        //public static Estoque BuscarIngredientePorId(int id)
+        //{
+        //    return ctx.Estoque.Include("Ingrediente").FirstOrDefault(x => x.Ingrediente.IngredienteID == id);
+        //}
+
         public static void RemoverEstoque(Estoque e)
         {
 

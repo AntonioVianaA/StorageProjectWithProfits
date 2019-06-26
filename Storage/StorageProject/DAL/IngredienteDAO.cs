@@ -17,13 +17,19 @@ namespace StorageProject.DAL
 
         public static bool CadastrarIngrediente(Ingrediente i)
         {
-            if (BuscarIngredientePorNome(i) == null)
+            Ingrediente ingrediente = BuscarIngredientePorNome(i);
+            if (ingrediente == null)
             {
                 ctx.Ingrediente.Add(i);
-                //Exception de Datetime2
                 ctx.SaveChanges();
                 EstoqueDAO.CadastrarIngrediente(i);
                 return true;
+            }
+            else
+            {
+                ingrediente.QuantEstoque += i.QuantEstoque;
+                ctx.Entry(ingrediente).State = System.Data.Entity.EntityState.Modified;
+                ctx.SaveChanges();
             }
             return false;
         }
@@ -33,7 +39,11 @@ namespace StorageProject.DAL
             return ctx.Ingrediente.Find(id);
         }
 
-        
+        public static void RemoverIngrediente(Ingrediente i)
+        {
+            ctx.Ingrediente.Remove(i);
+            ctx.SaveChanges();
+        }
 
         public static void AlterarIngrediente(Ingrediente i)
         {
