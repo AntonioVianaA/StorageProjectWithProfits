@@ -40,6 +40,7 @@ namespace StorageProject.Controllers
         public ActionResult Remover(int? id)
         {
             EstoqueDAO.RemoverEstoque(EstoqueDAO.BuscarIngredientePorId(id));
+            IngredienteDAO.RemoverIngrediente(IngredienteDAO.BuscarIngredientePorId(id));
             return RedirectToAction("Index", "Estoque");
         }
 
