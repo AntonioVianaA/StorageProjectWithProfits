@@ -5,6 +5,7 @@
     Usuario u = ViewBag.Usuario;
     ViewBag.NomeUsuario = u.Nome;
     ViewBag.SobrenomeUsuario = u.Sobrenome;
+    ViewBag.IdUsuario = u.UsuarioID;
 }
 
 <h2>Index 2</h2>
@@ -49,9 +50,10 @@
 
                                     <div class="row">
                                         <div class="col-md-8 col-6">
-                                            @Html.TextBoxFor(m => m.Imagem, new { type = "file", @class = "btn btn-default btn-file" })
+                                            @Html.TextBoxFor(model => model.Imagem, new { type = "file", @class = "btn btn-default btn-file" })
+                                            @*@Html.ActionLink(" ", "Alterar", "Estoque", new { id = item.Ingrediente.IngredienteID }, new { @class = "fas fa-edit" })*@
 
-                                            @Html.ActionLink("Alterar", "AlterarImagem", "Usuario", new { @class = "btn btn-default btn-file" })
+                                            @Html.ActionLink("Alterar", "AlterarImagem", "Usuario", new { @id = u.UsuarioID}, new { @class = "btn btn-default btn-file" })
                                         </div>
                                     </div>
 

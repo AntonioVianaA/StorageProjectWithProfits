@@ -30,6 +30,11 @@ namespace StorageProject.DAL
             return ctx.Usuario.Include("Endereco").FirstOrDefault(x => x.Username.Equals(u));
         }
 
+        public static Usuario BuscarUsuarioId(int? id)
+        {
+            return ctx.Usuario.Find(id);
+        }
+
         public static Endereco BuscarEndereco(Usuario u)
         {
             return ctx.Endereco.FirstOrDefault(x => x.EnderecoID.Equals(u.Endereco.EnderecoID));
@@ -39,6 +44,12 @@ namespace StorageProject.DAL
         public static Usuario BuscarUserLoginPassword(Usuario usuario)
         {
             return ctx.Usuario.FirstOrDefault(x => x.Username.Equals(usuario.Username) && x.Password.Equals(usuario.Password));
+        }
+
+        public static void AlterarUsuario(Usuario u)
+        {
+            ctx.Entry(u).State = System.Data.Entity.EntityState.Modified;
+            ctx.SaveChanges();
         }
 
 

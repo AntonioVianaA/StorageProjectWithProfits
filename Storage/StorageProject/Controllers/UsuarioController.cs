@@ -29,18 +29,41 @@ namespace StorageProject.Controllers
         {
             return View();
         }
-        public ActionResult AlterarImagem()
+        //public ActionResult AlterarImagem(int? id, HttpPostedFileBase fupImagem)
+        //{
+        //    Usuario u = UsuarioDAO.BuscarUsuarioId(id);
+        //    string caminho = System.IO.Path.Combine(Server.MapPath("~/Images/"), fupImagem.FileName);
+        //    fupImagem.SaveAs(caminho);
+        //    u.Imagem = fupImagem.FileName;
+        //    UsuarioDAO.AlterarUsuario(u);
+        //    return View("Index", "Usuario");
+        //}
+
+        public ActionResult AlterarImagem(int? id, HttpPostedFileBase fupImagem/*, Usuario usuario*/)
         {
-            return View();
+            if (ModelState.IsValid)
+            {
+                Usuario u = UsuarioDAO.BuscarUsuarioId(id);
+
+                string caminho = System.IO.Path.Combine(Server.MapPath("~/Images/"), fupImagem.FileName);
+                fupImagem.SaveAs(caminho);
+                u.Imagem = fupImagem.FileName;
+
+                UsuarioDAO.AlterarUsuario(u);
+                return RedirectToAction("Index", "Usuario");
+            }
+            return RedirectToAction("Index", "Usuario");
         }
 
 
 
         [HttpPost]
-        public ActionResult Cadastrar(Usuario usuario)
+        public ActionResult Cadastrar(HttpPostedFileBase fupImagem ,Usuario usuario)
         {
             if (ModelState.IsValid)
             {
+                usuario.Imagem = "semimagem.jpeg";
+
                 if (UsuarioDAO.CadastrarUsuario(usuario))
                 {
                     return RedirectToAction("Index", "Home");
