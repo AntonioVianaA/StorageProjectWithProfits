@@ -37,23 +37,22 @@
                         <div class="tab-content ml-1" id="myTabContent">
                             <div class="tab-pane fade show active" id="basicInfo" role="tabpanel" aria-labelledby="basicInfo-tab">
                                 <div class="image-container">
-                                    <img src="http://placehold.it/150x150" id="imgProfile" style="width: 150px; height: 150px" class="" />
+                                    <img src="~/Images/@u.Imagem" id="imgProfile" style="width: 150px; height: 150px" class="" />
 
 
 
 
                                 </div>
-                                @using (Html.BeginForm("Index", "Usuario", FormMethod.Post, new { @class = "pure-form pure-form-aligned" }))
+                                @using (Html.BeginForm("Index", "Usuario", FormMethod.Post, new { @class = "pure-form pure-form-aligned", enctype = "multipart/form-data"}))
 
                                 {
 
 
-                                    <div class="row">
+                                    <div id="Imagem" class="row">
+                                            @Html.ValidationMessageFor(model => model.Imagem, "", new { @class = "text-danger" })
                                         <div class="col-md-8 col-6">
-                                            @Html.TextBoxFor(model => model.Imagem, new { type = "file", @class = "btn btn-default btn-file" })
-                                            @*@Html.ActionLink(" ", "Alterar", "Estoque", new { id = item.Ingrediente.IngredienteID }, new { @class = "fas fa-edit" })*@
-
-                                            @Html.ActionLink("Alterar", "AlterarImagem", "Usuario", new { @id = u.UsuarioID}, new { @class = "btn btn-default btn-file" })
+                                            <input type="file" name="fupImagem" id="fupImagem" class="btn btn-default btn-file" />
+                                            @Html.ActionLink("Alterar", "Index", "Usuario", new { @id = u.UsuarioID }, new { @class = "btn btn-default btn-file" })
                                         </div>
                                     </div>
 

@@ -175,7 +175,6 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\PagedList.css" />
     <Content Include="Global.asax" />
-    <Content Include="Images\semimagem.jpeg" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -294,6 +293,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Content\assets\fonts\" />
+    <Folder Include="Images\" />
     <Folder Include="Utils\" />
   </ItemGroup>
   <ItemGroup>

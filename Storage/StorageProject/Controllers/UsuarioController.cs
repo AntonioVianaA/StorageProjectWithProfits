@@ -39,26 +39,49 @@ namespace StorageProject.Controllers
         //    return View("Index", "Usuario");
         //}
 
-        public ActionResult AlterarImagem(int? id, HttpPostedFileBase fupImagem/*, Usuario usuario*/)
+        //public ActionResult AlterarImagem(int? id, HttpPostedFileBase fupImagem/*, Usuario usuario*/)
+        //{
+        //    if (ModelState.IsValid)
+        //    {
+        //        Usuario u = UsuarioDAO.BuscarUsuarioId(id);
+
+        //        var uploadPath = Server.MapPath("~/Images");
+        //        string caminho = Path.Combine(uploadPath,
+        //        Path.GetFileName(fupImagem.FileName));
+
+        //        fupImagem.SaveAs(caminho);
+        //        u.Imagem = fupImagem.FileName;
+
+        //        UsuarioDAO.AlterarUsuario(u);
+        //        return RedirectToAction("Index", "Usuario");
+        //    }
+        //    return RedirectToAction("Index", "Usuario");
+        //}
+
+        [HttpPost]
+        public ActionResult Index(int? id, HttpPostedFileBase fupImagem)
         {
+            Usuario usuario = UsuarioDAO.BuscarUsuarioId(id);
             if (ModelState.IsValid)
             {
-                Usuario u = UsuarioDAO.BuscarUsuarioId(id);
-
-                string caminho = System.IO.Path.Combine(Server.MapPath("~/Images/"), fupImagem.FileName);
-                fupImagem.SaveAs(caminho);
-                u.Imagem = fupImagem.FileName;
-
-                UsuarioDAO.AlterarUsuario(u);
+                //Imagem
+                if (fupImagem != null)
+                {
+                    string caminho = System.IO.Path.Combine(Server.MapPath("~/Images"), fupImagem.FileName);
+                    fupImagem.SaveAs(caminho);
+                    usuario.Imagem = fupImagem.FileName;
+                }
+                else
+                {
+                    usuario.Imagem = "semimagem.jpeg";
+                }
                 return RedirectToAction("Index", "Usuario");
             }
             return RedirectToAction("Index", "Usuario");
         }
 
-
-
         [HttpPost]
-        public ActionResult Cadastrar(HttpPostedFileBase fupImagem ,Usuario usuario)
+        public ActionResult Cadastrar(Usuario usuario)
         {
             if (ModelState.IsValid)
             {
