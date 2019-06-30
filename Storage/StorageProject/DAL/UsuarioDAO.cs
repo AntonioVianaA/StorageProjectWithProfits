@@ -14,6 +14,7 @@ namespace StorageProject.DAL
         {
             if (BuscarUserLogin(u) == null)
             {
+                u.Imagem = "semimagem.jpeg";
                 ctx.Usuario.Add(u);
                 ctx.SaveChanges();
                 return true;

@@ -70,10 +70,12 @@ namespace StorageProject.Controllers
                     string caminho = System.IO.Path.Combine(Server.MapPath("~/Images"), fupImagem.FileName);
                     fupImagem.SaveAs(caminho);
                     usuario.Imagem = fupImagem.FileName;
+                    UsuarioDAO.AlterarUsuario(usuario);
                 }
                 else
                 {
                     usuario.Imagem = "semimagem.jpeg";
+                    UsuarioDAO.AlterarUsuario(usuario);
                 }
                 return RedirectToAction("Index", "Usuario");
             }
@@ -85,8 +87,6 @@ namespace StorageProject.Controllers
         {
             if (ModelState.IsValid)
             {
-                usuario.Imagem = "semimagem.jpeg";
-
                 if (UsuarioDAO.CadastrarUsuario(usuario))
                 {
                     return RedirectToAction("Index", "Home");
