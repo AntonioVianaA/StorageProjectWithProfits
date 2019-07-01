@@ -2,6 +2,7 @@
 using StorageProject.Models;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -58,29 +59,29 @@ namespace StorageProject.Controllers
         //    return RedirectToAction("Index", "Usuario");
         //}
 
-        [HttpPost]
-        public ActionResult Index(int? id, HttpPostedFileBase fupImagem)
-        {
-            Usuario usuario = UsuarioDAO.BuscarUsuarioId(id);
-            if (ModelState.IsValid)
-            {
-                //Imagem
-                if (fupImagem != null)
-                {
-                    string caminho = System.IO.Path.Combine(Server.MapPath("~/Images"), fupImagem.FileName);
-                    fupImagem.SaveAs(caminho);
-                    usuario.Imagem = fupImagem.FileName;
-                    UsuarioDAO.AlterarUsuario(usuario);
-                }
-                else
-                {
-                    usuario.Imagem = "semimagem.jpeg";
-                    UsuarioDAO.AlterarUsuario(usuario);
-                }
-                return RedirectToAction("Index", "Usuario");
-            }
-            return RedirectToAction("Index", "Usuario");
-        }
+        //[HttpPost]
+        //public ActionResult Index(int? id, HttpPostedFileBase fupImagem)
+        //{
+        //    Usuario usuario = UsuarioDAO.BuscarUsuarioId(id);
+        //    if (ModelState.IsValid)
+        //    {
+        //        //Imagem
+        //        if (fupImagem != null)
+        //        {
+        //            string caminho = System.IO.Path.Combine(Server.MapPath("~/Images"), fupImagem.FileName);
+        //            fupImagem.SaveAs(caminho);
+        //            usuario.Imagem = fupImagem.FileName;
+        //            UsuarioDAO.AlterarUsuario(usuario);
+        //        }
+        //        else
+        //        {
+        //            usuario.Imagem = "semimagem.jpeg";
+        //            UsuarioDAO.AlterarUsuario(usuario);
+        //        }
+        //        return RedirectToAction("Index", "Usuario");
+        //    }
+        //    return RedirectToAction("Index", "Usuario");
+        //}
 
         [HttpPost]
         public ActionResult Cadastrar(Usuario usuario)
@@ -114,6 +115,18 @@ namespace StorageProject.Controllers
             }
             ModelState.AddModelError("", "Login ou senha incorretos!");
             return View();
+        }
+
+        [HttpPost]
+        public ActionResult AlterarImagem(int? id, HttpPostedFileBase imagem)
+        {
+            Usuario u = UsuarioDAO.BuscarUsuarioId(id);
+            u.Imagem = imagem.FileName;
+
+            imagem.SaveAs(Path.Combine("~/Images/", imagem.FileName));
+
+            UsuarioDAO.AlterarUsuario(u);
+            return RedirectToAction("Index", "Usuario");
         }
         public ActionResult Logout()
         {

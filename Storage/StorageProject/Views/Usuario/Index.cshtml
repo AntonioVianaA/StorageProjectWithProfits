@@ -1,5 +1,5 @@
 ﻿@using StorageProject.Models
-@model Usuario
+@model StorageProject.Models.Usuario
 @{
     ViewBag.Title = "Usuario";
     Usuario u = ViewBag.Usuario;
@@ -38,25 +38,41 @@
                             <div class="tab-pane fade show active" id="basicInfo" role="tabpanel" aria-labelledby="basicInfo-tab">
                                 <div class="image-container">
                                     <img src="~/Images/@u.Imagem" id="imgProfile" style="width: 150px; height: 150px" class="" />
-
-
-
-
                                 </div>
-                                @using (Html.BeginForm("Index", "Usuario", FormMethod.Post, new { @class = "pure-form pure-form-aligned", enctype = "multipart/form-data"}))
+                                @using (Html.BeginForm("AlterarImagem", "Usuario", FormMethod.Post, new { @class = "pure-form pure-form-aligned", enctype = "multipart/form-data" }))
 
                                 {
 
 
                                     <div id="Imagem" class="row">
-                                            @Html.ValidationMessageFor(model => model.Imagem, "", new { @class = "text-danger" })
+                                        @Html.ValidationMessageFor(model => model.Imagem, "", new { @class = "text-danger" })
                                         <div class="col-md-8 col-6">
-                                            <input type="file" name="fupImagem" id="fupImagem" class="btn btn-default btn-file" />
-                                            @Html.ActionLink("Alterar", "Index", "Usuario", new { @id = u.UsuarioID }, new { @class = "btn btn-default btn-file" })
+                                            <input type="file" class="btn btn-default btn-file" onsubmit="uploadImagem()"/>
+                                            @Html.ActionLink("Alterar", "AlterarImagem", "Usuario", new { @id = u.UsuarioID }, new { @class = "btn btn-default btn-file" })
                                         </div>
                                     </div>
 
+                                    <script>
 
+                                        function uploadImagem() {
+
+                                            if (event.target.files != null && event.target.files.length != 0) {
+
+                                                var arquivoSelecionado = event.target.files[0];
+
+                                                var formData = new FormData();
+
+                                                formData.append("imagem", arquivoSelecionado);
+
+                                                var xhr = new XMLHttpRequest();
+
+                                                xhr.open('POST', "/Usuario/AlterarImagem", true);
+
+                                                xhr.send(formData);
+                                            }
+                                        }
+
+                                    </script>
 
                                 }
 
