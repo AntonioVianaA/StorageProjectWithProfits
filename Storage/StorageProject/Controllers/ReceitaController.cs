@@ -15,6 +15,8 @@ namespace StorageProject.Controllers
         {
             string a = User.Identity.Name;
             ViewBag.Usuario = UsuarioDAO.BuscarUserLoginString(a);
+            //ViewBag.Ingredientes = 
+            //ViewBag.Receitas = ReceitaDAO.RetornaReceitas();
             return View();
         }
     }

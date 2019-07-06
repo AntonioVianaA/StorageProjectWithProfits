@@ -224,6 +224,7 @@
     <Compile Include="Controllers\UsuarioController.cs" />
     <Compile Include="DAL\EstoqueDAO.cs" />
     <Compile Include="DAL\IngredienteDAO.cs" />
+    <Compile Include="DAL\ReceitaDAO.cs" />
     <Compile Include="DAL\SingletonContext.cs" />
     <Compile Include="DAL\UsuarioDAO.cs" />
     <Compile Include="Global.asax.cs">

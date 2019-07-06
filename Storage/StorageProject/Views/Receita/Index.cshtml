@@ -1,4 +1,5 @@
 ﻿@using StorageProject.Models
+@model Receita
 @{
     Usuario u = ViewBag.Usuario;
     ViewBag.NomeUsuario = u.Nome;
@@ -10,5 +11,159 @@
 <script src="~/Content/assets/js/MenuAtivo.js"></script>
 <script>
     $('#ItemReceita').addClass('active');
+</script>
+
+<link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous">
+<script src="https://kit.fontawesome.com/4e0e542aed.js"></script>
+<div class="row">
+
+    <div class="col-md-4 col-md-offset-2">
+        <div class="card card-user">
+            <div class="card-header">
+                <h2 class="card-title description">Cadastro Receitas</h2>
+            </div>
+            <div class="card-body">
+                @using (Html.BeginForm("Incluir", "Receita", FormMethod.Post, new { @class = "pure-form pure-form-aligned" }))
+                {
+                    <fieldset>
+                        <div class="pure-control-group">
+                            @Html.Label("Nome")
+                            @Html.TextBoxFor(model => model.Nome, new { @class = "col-8", @placeholder = "Nome da Receita" })
+
+                        </div>
+
+                        <div class="pure-control-group">
+                            @Html.Label("Ingredientes")
+                            <table class="table table-hover table-striped" style="margin-bottom:40px">
+                                <tr>
+                                    <th>
+                                        Nome
+                                    </th>
+                                    <th></th>
+                                    <th>
+                                        Quantidade
+                                    </th>
+                                    <th></th>
+                                    <th></th>
+                                </tr>
+
+                                @*@foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>
+                                            <img src="~/Images/@item.Produto.Imagem" alt="@item.Produto.Descricao"
+                                                 style="border:solid; width:75px" />
+                                        </td>
+                                        <td>
+                                            @item.Produto.Nome
+                                        </td>
+                                        <td>
+                                            @item.Preco.ToString("C2")
+                                        </td>
+                                        <td>
+                                            @Html.ActionLink("+", "AdicionarQuantidade", "Home", new { id = item.ItemVendaId }, new { @class = "btn btn-success" })
+                                        </td>
+                                        <td>
+                                            @item.Quantidade
+                                        </td>
+                                        <td>
+                                            @Html.ActionLink("-", "DiminuirQuantidade", "Home", new { id = item.ItemVendaId }, new { @class = "btn btn-danger" })
+                                        </td>
+                                        <td>
+                                            @{
+                                                double subtotal = item.Quantidade * item.Preco;
+                                            }
+                                            @subtotal.ToString("C2")
+                                        </td>
+                                        <td>
+                                            @Html.ActionLink("Remover", "RemoverItem", "Home", new { id = item.ItemVendaId }, new { @class = "btn btn-danger" })
+                                        </td>
+                                    </tr>
+                                }*@
+
+                            </table>
+                        </div>
+
+                        <div class="pure-control-group">
+                            @Html.Label("Preparo")
+                            @Html.TextAreaFor(model => model.ModoPreparo, new { @class = "col-8", @placeholder = "Modo de Preparo" })
+
+                        </div>
+
+                        <div class="pure-control-group">
+                            @Html.Label("Rendimento")
+                            @Html.TextBoxFor(model => model.Rendimento, new { @type = "number", @class = "col-8", @placeholder = "Rendimento"})
+
+
+                        </div>
+
+                        <div class="pure-control-group">
+                            @Html.Label("Tempo de Preparo")
+                            @Html.TextBoxFor(model => model.TempoPreparo, new { @type = "time", @class = "col-8"})
+                        </div>
+                        <div class="pure-controls">
+                            <button type="submit" class="pure-button pure-button-primary">Incluir Receita</button>
+                        </div>
+                    </fieldset>
+                }
+
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-8 col-md-offset-2">
+        <div class="card">
+            <div class="card-body">
+                <div class="description">
+                    <h2>Receitas</h2>
+                </div>
+
+                @*<input id="myInput" type="text" placeholder="Search..">*@
+
+                <div style="overflow: auto; height: 560px">
+                    <table id="myTable" class="table table-hover">
+                        <thead class="thead-light">
+                            <tr>
+                                <th>Nome</th>
+                                <th>Rendimento</th>
+                                <th>Tempo</th>
+                                <th colspan="2">Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody id="myTable">
+                            @*@foreach (Estoque item in estoque)
+                            {
+                                <tr>
+                                    <td>@item.Ingrediente.Nome</td>
+                                    <td>@item.Ingrediente.Preco</td>
+                                    <td>@item.Ingrediente.QuantEstoque</td>
+                                    <td>@item.Ingrediente.Validade.ToShortDateString()</td>
+                                    <td>@item.Ingrediente.Descricao</td>
+
+
+                                    <td>@Html.ActionLink(" ", "Remover", "Estoque", new { id = item.Ingrediente.IngredienteID }, new { @class = "fas fa-times" })</td>
+                                    <td>@Html.ActionLink(" ", "Alterar", "Estoque", new { id = item.Ingrediente.IngredienteID }, new { @class = "fas fa-edit" })</td>
+                                </tr>
+
+                            }*@
+                        </tbody>
+                    </table>
+                    <div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        $("#myInput").on("keyup", function () {
+            var value = $(this).val().toLowerCase();
+            $("#myTable tr").filter(function () {
+                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+            });
+        });
+    });
 </script>
 

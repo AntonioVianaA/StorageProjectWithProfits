@@ -11,7 +11,7 @@ public class Receita
 {
     public Receita()
     {
-
+        Ingredientes_Receita = new List<Ingredientes_Receita>();
         CadastradoEm = DateTime.Now;
     }
 

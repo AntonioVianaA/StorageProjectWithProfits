@@ -42,7 +42,7 @@
 
                         <div class="pure-control-group">
                             @Html.Label("Preço")
-                            @Html.TextBoxFor(model => model.Ingrediente.Preco, new { @type = "number", @step = "any", @class = "col-8", @placeholder = "Preço Ingrediente" })
+                            @Html.TextBoxFor(model => model.Ingrediente.Preco.ToString("C2"), new { @type = "number", @step = "any", @class = "col-8", @placeholder = "Preço Ingrediente" })
 
                         </div>
 
